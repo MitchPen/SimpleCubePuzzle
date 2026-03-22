@@ -4,7 +4,10 @@ namespace Core.LevelSystem
     {
         Empty = -1,
         Block = 0,
-        Obstacle = 1,
-        Finish = 2
+        Finish = 1,
+        DefaultButton = 2,
+        PressButton = 3,
+        MotionObstacle = 4,
+        VanishingBlock = 5
     }
 }

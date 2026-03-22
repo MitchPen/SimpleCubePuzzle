@@ -6,7 +6,6 @@ namespace Core.LevelSystem
     {
         private BlocksContainer _container;
         
-        
         public Block CreateBlock(BlockType type)
         {
             var blockPrefab = _container.GetBlock(type);
