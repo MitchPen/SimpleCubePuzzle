@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ca82ff6a89b9b40b6376a3716caae4, type: 3}
   m_Name: BlocksContainer
   m_EditorClassIdentifier: Assembly-CSharp::Core.LevelSystem.BlocksContainer
-  Blocks: []
+  Blocks:
+  - Type: 0
+    Prefab: {fileID: 0}
