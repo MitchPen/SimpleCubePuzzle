@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using Core.Common.GameStateMachine.States;
 using Core.Common.GameStateMachine.States.Boot;
+using Core.Common.GameStateMachine.States.LevelCreator;
+using Core.Common.GameStateMachine.States.LevelState;
 using Zenject;
 
 namespace Core.Common.GameStateMachine
@@ -27,6 +29,8 @@ namespace Core.Common.GameStateMachine
             _stateMap = new Dictionary<Type, BaseState>();
             _stateMap.Add(typeof(BootState), _container.Instantiate<BootState>());
             _stateMap.Add(typeof(MainMenuState), _container.Instantiate<MainMenuState>());
+            _stateMap.Add(typeof(LevelCreatorState), _container.Instantiate<LevelCreatorState>());
+            _stateMap.Add(typeof(LevelState), _container.Instantiate<LevelState>());
         }
 
         public void ChangeState<T>(BaseStateArgs args)

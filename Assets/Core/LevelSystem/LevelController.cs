@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core.LevelSystem
 {
-    public class Level : MonoBehaviour
+    public class LevelController : MonoBehaviour
     {
         private IInteractable _finish;
         private List<BaseBlock>  _blocks;

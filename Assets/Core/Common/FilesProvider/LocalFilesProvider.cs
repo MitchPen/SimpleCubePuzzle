@@ -1,21 +1,39 @@
 using UnityEngine;
+using System.IO;
 
 namespace Core.Common.FilesProvider
 {
-    public class LocalFilesProvider: IFilesProvider
+    public class LocalFilesProvider : IFilesProvider
     {
-        public const string FILE_EXTENSION = ".json";
-        public string DATA_PATH = Application.dataPath;
-        
-        
-        public string ReadDataFromJson(string filepath)
+        private const string FILE_JSON_EXTENSION = ".json";
+        private string DATA_PATH = Application.persistentDataPath;
+
+        public LocalFilesProvider()
         {
-            throw new System.NotImplementedException();
+            Debug.Log(Application.persistentDataPath);
         }
 
-        public string WriteDataToJson(string filepath)
+        public string ReadDataFromJson(string filename, string folder)
         {
-            throw new System.NotImplementedException();
+            filename += FILE_JSON_EXTENSION;
+            var dirPath = Path.Combine(DATA_PATH, folder);
+            if (!Directory.Exists(dirPath)) return null;
+
+            var filePath = Path.Combine(dirPath, filename);
+            if (File.Exists(filePath))
+                return File.ReadAllText(filePath);
+
+            return null;
+        }
+
+        public void WriteDataToJson(string filename, string folder, string data)
+        {
+            filename += FILE_JSON_EXTENSION;
+            var dirPath = Path.Combine(DATA_PATH, folder);
+            if (!Directory.Exists(dirPath))
+                Directory.CreateDirectory(dirPath);
+            var filePath = Path.Combine(dirPath, filename);
+            File.WriteAllText(filePath, data);
         }
     }
 }

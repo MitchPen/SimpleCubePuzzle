@@ -155,3 +155,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.Common.CoreConfigsInstaller
   _bootConfig: {fileID: 11400000, guid: 50aeda36a6b1404439345c62fb735b52, type: 2}
   _inputConfig: {fileID: 11400000, guid: 10b3bc4c6515edf4883ae3fd907d9fcb, type: 2}
+  _pathDataConfig: {fileID: 11400000, guid: d30526a0af5e2f0468c3f579f83bbfd5, type: 2}
